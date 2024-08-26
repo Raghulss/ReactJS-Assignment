@@ -16,6 +16,7 @@ export const StonePaperScissor = () => {
     const [userMove, setUserMove] = useState('')
     const [compScore, setCompScore] = useState(0)
     const [userScore, setUserScore] = useState(0)
+    const [currentStatus, setCurrentStatus] = useState('')
 
     const onUserMove = (e) => {
         let compMoveIndex = Math.floor(Math.random() * 3)
@@ -30,17 +31,21 @@ export const StonePaperScissor = () => {
         setCompScore(0)
         setUserMove('')
         setComputerMove('')
+        setCurrentStatus('')
     }
 
     const checkResult = (userMove, computerMove) => {
         console.log(computerMove, userMove)
         if(computerMove === userMove) {
+            setCurrentStatus('Tie')
             return
         }
         if(WINNING_COMBINATIONS[computerMove] === userMove){
             setCompScore(prev => prev + 1)
+            etCurrentStatus('Computer Wins')
         }else {
             setUserScore(prev => prev + 1)
+            etCurrentStatus('User Wins')
         }
     }
 
@@ -87,6 +92,7 @@ export const StonePaperScissor = () => {
                         <span>User : {userMove}</span>
                         <span>Computer : {computerMove}</span>
                     </div>
+                    {currentStatus.trim() && <span>{currentStatus}</span>}
                 </div>
             </div>
         </>
