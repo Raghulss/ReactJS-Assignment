@@ -1,0 +1,31 @@
+.box{
+    /* height: 10px;
+    width: 10px; */
+    cursor: pointer;
+}
+
+.d-flex{
+    display: flex;
+    gap: 5px;
+    margin-top: 16px;
+}
+
+.box.fill1{
+    background-color: gold;
+}
+
+.box.fill2{
+    background-color: gold;
+}
+
+.box.fill3{
+    background-color: gold;
+}
+
+.box.fill4{
+    background-color: gold;
+}
+
+.box.fill5{
+    background-color: gold;
+}
